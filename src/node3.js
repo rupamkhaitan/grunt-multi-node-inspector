@@ -15,7 +15,7 @@ var server = require('http').createServer(app);
 
 // Start server
 server.listen(8082, 'localhost', function () {
-  console.log('Express server listening on 8080, in %s mode',app.get('env'));
+  console.log('Express server listening on 8082, in %s mode',app.get('env'));
 });
 
 // Expose app

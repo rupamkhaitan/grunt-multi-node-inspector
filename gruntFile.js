@@ -284,5 +284,9 @@ module.exports = function(grunt) {
         'concurrent:node3'
       ]);
     }
+
+    return grunt.task.run([
+        'concurrent:debug'
+    ]);
   });
 };
