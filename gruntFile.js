@@ -269,24 +269,18 @@ module.exports = function(grunt) {
 
     else if (target === 'node_process1') {
       return grunt.task.run([
-        'express:config',
-        'express:monitor',
         'concurrent:node1'
       ]);
     }
 
     else if (target === 'node_process2') {
       return grunt.task.run([
-        'express:web',
-        'express:monitor',
         'concurrent:node2'
       ]);
     }
 
     else if (target === 'node_process3') {
       return grunt.task.run([
-        'express:web',
-        'express:config',
         'concurrent:node3'
       ]);
     }
