@@ -33,6 +33,7 @@ module.exports = function(grunt) {
           'src/node1.js',
         ],
         tasks: [
+          'express:node1'
         ],
         options: {
           livereload: true,
@@ -44,6 +45,7 @@ module.exports = function(grunt) {
           'src/node2.js'
         ],
         tasks: [
+          'express:node2'
         ],
         options: {
           livereload: true,
@@ -55,10 +57,39 @@ module.exports = function(grunt) {
           'src/node3.js'
         ],
         tasks: [
+          'express:node3'
         ],
         options: {
           livereload: true,
           nospawn: true //Without this option specified express won't be reloaded
+        }
+      }
+    },
+    express: {
+     options: {
+        protocol: '<%= express_config.protocol %>',
+        ip: '<%= express_config.ip %>',
+        port: '<%= express_config.port %>'
+      },
+      // this is the node1 worker 
+      node1: {
+        options: {
+          script: 'src/node1.js',
+          //debug: true
+        }
+      },
+      //this is node2 worker tier
+      node2: {
+        options: {
+          script: 'src/node2.js',
+          //debug: true
+        }
+      },
+      //this is node3 worker tier
+      node3: {
+        options: {
+          script: 'src/node3.js',
+          //debug: true
         }
       }
     },
